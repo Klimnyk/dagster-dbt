@@ -1,4 +1,8 @@
 import os
+from pathlib import Path
+
+DBT_DIRECTORY = Path(__file__).joinpath("..", "..", "..", "analytics").resolve()
+
 
 S3_BUCKET_PREFIX = os.getenv("S3_BUCKET_PREFIX", "s3://dagster-university/")
 
