@@ -1,11 +1,6 @@
 import os
 from pathlib import Path
 
-DBT_DIRECTORY = Path(__file__).joinpath("..", "..", "..", "analytics").resolve()
-
-
-S3_BUCKET_PREFIX = os.getenv("S3_BUCKET_PREFIX", "s3://dagster-university/")
-
 
 def get_path_for_env(path: str) -> str:
     """A utility method for Dagster University. Generates a path based on the environment.
@@ -21,6 +16,12 @@ def get_path_for_env(path: str) -> str:
     else:
         return path
 
+
+DBT_DIRECTORY = Path(__file__).joinpath("..", "..", "..", "analytics").resolve()
+
+S3_BUCKET_PREFIX = os.getenv("S3_BUCKET_PREFIX", "s3://dagster-university/")
+
+AIRPORT_TRIPS_FILE_PATH = get_path_for_env(os.path.join("data", "outputs", "airport_trips.png"))
 
 TAXI_ZONES_FILE_PATH = get_path_for_env("data/raw/taxi_zones.csv")
 TAXI_TRIPS_TEMPLATE_FILE_PATH = get_path_for_env("data/raw/taxi_trips_{}.parquet")

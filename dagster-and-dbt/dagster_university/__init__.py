@@ -15,7 +15,10 @@ requests_assets = load_assets_from_modules(
     modules=[requests],
     group_name="requests",
 )
-dbt_analytics_assets = load_assets_from_modules(modules=[dbt])
+dbt_analytics_assets = load_assets_from_modules(
+    modules=[dbt],
+    # group_name="dbt",
+    )
 
 
 all_jobs = [trip_update_job, weekly_update_job, adhoc_request_job]
