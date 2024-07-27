@@ -1,3 +1,10 @@
+.env
+*.csv
+*.parquet
+tmp*
+*.duckdb
+*.geojson
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
