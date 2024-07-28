@@ -1,5 +1,5 @@
 dagster_dbt_university:
-  target: prod
+  target: dev
   outputs:
     dev:
       type: duckdb
